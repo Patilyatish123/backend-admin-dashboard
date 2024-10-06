@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: linear-gradient(135deg, #bdc2e8 10%, #e6dee9 100%);
+        }
+        
+        .login-container {
+            background-color: #fff;
+            padding:70px 45px;
+            border-radius: 12px 0 0 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 380px;
+            text-align: center;
+        } 
+        h2 {
+            margin-bottom: 40px;
+            font-size: 24px;
+        }
+        .input-group {
+            display: flex;
+            margin-bottom: 15px; 
+        }
+        label i{
+        height: 40px;
+        background-color: rgb(216, 215, 215);
+        color: #3e3c3c;
+        align-content: center;
+        padding: 0 15px;
+        }
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 100%;
+            font-size: 16px;
+            background-color: #f4f3f3;
+            color: rgb(34, 33, 33);
+            outline: none;
+        }
+        .login-btn {
+            width: 100%;
+            padding: 10px;
+            background-image: linear-gradient(135deg, #a3bded 10%, #6991c7 100%);
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        .login-btn:hover {
+            background-image: linear-gradient(135deg, #435e91 10%, #4a73aa 100%);
+        }
+        .login-page{
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 0 1px rgb(110, 110, 110);
+            border-radius: 12px;
+        }
+        .signup-container{
+            background-image: linear-gradient(135deg, #a3bded 10%, #6991c7 100%);
+            border-radius: 0 12px 12px 0;
+            width: 340px;
+            text-align: center;
+            align-content: center;
+        }
+        .signup-container h2{
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        .signup-container h4{
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 400; 
+        }
+        .sign-up{
+            margin-top: 40px;
+        }
+        .sign-up a{
+            list-style: none;
+            text-decoration: none;
+            padding: 8px 80px;
+            background-color: #ffffff;
+            border: 2px solid #ffffff;
+            color: #3e3c3c;
+        }
+        .sign-up :hover{
+            background-image: linear-gradient(135deg, #a3bded 10%, #6991c7 100%);
+            color: #ffffff;
+            transition: 0.3s ease-in-out;
+        }        
+    </style>
+</head>
+<body>
+    <div class="login-page">
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="/login" method="POST">
+            <div class="input-group">
+                <label for="username"><i class="fa-solid fa-user"></i></label>
+                <input type="usename" id="username" name="username" placeholder="Username" required>
+            </div>
+            <div class="input-group">
+                <label for="password"><i class="fa-solid fa-lock"></i></label>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+           
+        </form>
+    </div>
+    <div class="signup-container">
+        <h2>Welcome to login</h2>
+        <h4>Dont't have an account?</h4>
+        <div class="sign-up">
+        <a href="/signup">Sign Up</a>
+    </div>
+    </div>
+</div>
+</body>
+</html>

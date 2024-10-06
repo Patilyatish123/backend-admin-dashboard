@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update User</title>
+    <style>
+        /* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(135deg, #e1b7fa 10%, #af59e0 100%); 
+    color: #ecf0f1;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+/* Container for Update Form */
+.update-container {
+    background-image: linear-gradient(135deg, #f5f7fa 10%, #c3cfe2 100%);  
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    
+}
+/* Header Styles */
+.update-container h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #ffffff;
+    
+}
+
+/* Input Fields */
+.update-container input[type="text"],
+.update-container input[type="number"] {
+    width: 90%;
+    padding: 10px ;
+    margin-bottom: 15px;
+    border: 1px solid #7f8c8d;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #5d5c5c;
+}
+
+/* Submit Button */
+.update-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #86b2f0;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Hover Effect for Button */
+.update-container button:hover {
+    background-color: #5a98f0;
+}
+
+/* Back to Dashboard Link */
+.update-container .back-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.update-container .back-link:hover {
+    text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+
+    <div class="update-container">
+    <h1>Update User</h1>
+    <form action="/update/<%= user._id %>" method="POST">   
+        <input type="text" name="name"  id="name" value="<%= user.name %>"  placeholder="Name">
+        <br>
+        
+        <input type="number" name="age" id="age" value="<%= user.age %>" placeholder="Age">
+        <br>
+        
+        <input type="text" name="location" id="location" value="<%= user.location %>" placeholder="Location">
+        <br>
+        
+        <input type="text" name="department" id="department" value="<%= user.department %>" placeholder="Department">
+        <br>
+        <button type="submit">Update</button>
+    </form>
+    <a href="/" class="back-link">Back to Dashboard</a>
+</div>
+</body>
+</html>

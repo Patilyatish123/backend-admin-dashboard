@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+          background-image: linear-gradient(135deg, #fddb92 10%, #d1fdff 100%);; /* Deep dark background */
+            color: #e7dfdd; /* Light text color */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Header section */
+        header {
+            
+            margin:0px 0 20px 0;
+            animation: slideInDown 1s ease-out; /* Header animation */
+        }
+
+        h1.heading {
+            margin: 0;
+            color:  #975bc2;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Section styling */
+        section {
+            width: 80%;
+            max-width: 1200px;
+            background: #ffffff; /*linear-gradient(135deg, #E5BDF6 10%, #D8DEDE 100%);  Darker purple */
+            border-radius: 12px;
+            padding: 30px 50px 20px 50px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1.2s ease-out;
+        }
+       
+    
+
+        form .search-bar {
+            background-color: #FFFFFF; /* Dark input background */ 
+            border:none; /* Border matching the theme */
+            padding: 10px;
+            border:2px solid #ff9800;
+            border-radius: 5px;
+            width: 300px;
+            margin-bottom: 10px;
+            transition: box-shadow 0.3s ease;
+            color: #3a4c4e;
+        }
+  
+        form .search-bar:focus {
+            outline: none;
+            box-shadow: 0 0 9px #f5b85d; /* Glowing focus effect */
+        }
+
+        form .search-btn {
+            background-color: #ff9800; /* Bright orange button */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        form .search-btn:hover {
+            background-color: #e58900; /* Darker orange on hover */
+            transform: translateY(-2px);
+        }
+
+        .dashboard-button {
+            /* Bright cyan button */
+            background-color: #ce48da;
+            color: #fff;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        #add-btn{
+            background-color: #975bc2;
+        }
+        #add-btn:hover{
+            background-color: #3a4c4e;
+        }
+
+        .dashboard-button:hover {
+            background-color: #3a4c4e;
+            transform: translateY(-2px);
+        }
+
+        .dashboard-button + .dashboard-button {
+            margin-left: 10px;
+        }
+
+      
+        .action-btn{
+            display: flex;
+            justify-content: space-between;
+            
+        }
+    table{
+        width: 100%;
+        box-sizing: border-box;
+        border-collapse: collapse;
+        
+    }
+    th{
+        background-color: #d1fdff;
+        padding: 15px 20px;
+        color: #3a4c4e;
+        border: 1px solid slateblue;
+    }
+    td,tr{
+        border: 1px solid slateblue;
+        padding: 8px 10px;
+        background: #e7dfdd; 
+        text-align: center;
+        color: #3a4c4e;
+    }
+    .update-button{
+        margin-right: 25px;
+    }
+    .upde-btn i{
+        margin-left: 4px;
+        
+    }
+    .delete-button{
+        padding: 7px 20px;
+        font-size: 13px;
+        color: #D32D41;
+        border: 1px solid #D32D41;
+        border-radius:5px;
+        
+    }
+    .delete-button:hover{
+     background-color: #D32D41;
+     color:#ffffff;
+     transition: 0.3s;
+    }
+    .update-button{
+        list-style: none;
+        text-decoration: none;
+        font-size: 13px;
+        background-color: #ffffff;
+        padding: 7px 15px;
+        border:1px solid #198754;
+        color:#198754;
+        border-radius: 5px;
+    }
+    .update-button:hover{
+        background-color: #198754;
+        color: #ffffff;
+    }
+    #dashboard-btn{
+    background: linear-gradient(135deg, #E0C3FC 10%, #8EC5FC 100%);
+}
+#dashboard-btn{
+    background-color: #ffffff;
+}
+.buttons{
+    margin-top: 8px;
+    display: flex;
+}
+.View-records{
+    display: flex;
+    justify-content: space-between;align-items: center;
+    margin-top: 10px;
+}
+.prenxt-btns a{
+ text-decoration: none;
+ font-size: 15px;
+ padding: 6px 15px;
+ background-color: #5D8AA8;
+ border: 2px solid #5D8AA8;
+ border-radius: 2px;
+ color: #ffffff;
+ transition: 0.3s;
+}
+.prenxt-btns a:hover{
+    background-color: #ffffff;
+    color:#5D8AA8 ;
+    
+}
+.pre-btn{
+    margin-right: 10px;
+}
+.text{
+    color: slateblue;
+}
+header a{
+    float:right;
+}
+ .logout-btn button{
+   padding: 8px 20px;
+   background-color: #67b02f;
+   border: 2px solid #67b02f;
+   outline: none;
+   color: #ffffff;
+   cursor: pointer;
+   border-radius: 4px;
+   margin-left: 10.7rem;
+   margin-bottom: 10px;
+}
+.logout-btn button:hover{
+    background-color: #ffffff;
+    color: #67b02f;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="heading">Admin Dashboard</h1>
+    </header>
+  
+    <section>
+        <div class="action-btn"> 
+            <form action="/search" method="GET">
+                <span><input type="text" name="_id" placeholder="Enter User ID" required class="search-bar">
+                <button type="submit" class="search-btn">Search</button></span>
+            </form>
+            <div class="button-container">
+            <a href="/login" class="logout-btn"><button>Logout</button></a>
+            <div class="buttons">
+                <a href="/all-data" class="dashboard-button" id="dashboard-btn">Go to Dashboard</a>
+                <a href="/add" class="dashboard-button" id="add-btn">Add User</a>
+            </div>
+        </div>
+        </div><br>
+      
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Location</th>
+                    <th>department</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (data && data.length > 0) { %>
+                    <% data.forEach(user => { %>
+                        <tr>
+                            <td><%= user._id %></td>
+                            <td><%= user.name %></td>
+                            <td><%= user.age %></td>
+                            <td><%= user.location %></td>
+                            <td><%= user.department %></td>
+                            <td class="upde-btn">
+                                <!-- Update Button: Navigates to update page -->
+                                <a href="/update/<%= user._id %>" class="update-button">Update<i class="fas fa-edit"></i></a>
+
+                                <!-- Delete Form -->
+                                <form action="/delete/<%= user._id %>" method="POST" style="display:inline;">
+                                    <button type="submit" class="delete-button">Delete<i class="fa-solid fa-trash"></i></button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }) %>
+                <% } else { %>
+                    <tr>
+                        <td colspan="6" class="no-data">No user data available</td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+        <div class="View-records">
+            <div class="text"><p>Showing <%= startRecord %> to <%= endRecord %> of <%= totalRecords %> records</p></div>
+            <div class="prenxt-btns">
+                <% if (skip > 0) { %>
+                <a href="/all-data?skip=<%= skip - 8 %>" class="pre-btn">Previous</a>
+                <% } %>
+                <% if (endRecord < totalRecords) { %>
+            <a href="/all-data?skip=<%= skip + 8     %>" class="nxt-btn">Next</a></div>
+            <% } %>
+        </div>
+    </section>
+</body>
+</html>

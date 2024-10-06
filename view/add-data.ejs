@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New User</title>
+    <style>
+        /* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(135deg, #a3bded 10%, #6991c7 100%);
+    color: #ecf0f1;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+h1{
+    text-align: center;
+    color: #3b2667;
+}
+.form-container{
+    
+    width: 350px;
+    padding: 20px 50px;
+    background-image: linear-gradient(135deg, #cfd9df 10%, #e2ebf0 100%);
+    box-shadow: 0 0 20px rgb(30, 30, 30);
+    border-radius: 20px;
+    
+}
+form{
+    display: grid;
+   place-items: center;
+}
+
+.form-container form input{
+    width: 100%;
+    font-size: 15px;
+    margin-bottom: 15px;
+    padding: 8px;
+    outline: none;
+    
+    
+    
+}
+ form input:focus{
+    border: 2px solid #3b2667;
+}
+form button{
+    width: 40%;
+    padding: 6px;
+    background-color: #3b2667;
+    border: 2px solid #3b2667;
+    outline: none;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+form button:hover{
+    background-color: #ffffff;
+    color:#3b2667 ;
+    outline: none;
+    
+}
+.form-container a{
+    text-decoration: none;
+    color: #3b2667;
+}
+
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Add New User</h1>
+        <form action="/add" method="POST">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="number" name="age" placeholder="Age" required>
+            <input type="text" name="location" placeholder="Location" required>
+            <input type="text" name="department" placeholder="Department" required> 
+            <button type="submit">Add User</button>
+        </form>
+        <a href="/" class="back-link">Back to Dashboard</a>
+    </div>
+</body>
+</html>
